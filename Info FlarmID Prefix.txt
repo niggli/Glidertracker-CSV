@@ -1,0 +1,20 @@
+Die ersten beiden (hexadezimalen) Stellen (8 bit) der ID bestehen aus:
+
+STttttaa
+
+S: Stealth flag
+T: NoTracking flag, sollte nie im APRS als '1' auftreten
+tttt: Aircraft type:
+UNKNOWN(0), GLIDER(1), TOW_PLANE(2), HELICOPTER_ROTORCRAFT(3), PARACHUTE(4), DROP_PLANE(5), HANG_GLIDER(6), PARA_GLIDER(7), POWERED_AIRCRAFT(8), JET_AIRCRAFT(9), UFO(10), BALLOON(11), AIRSHIP(12), UAV(13), STATIC_OBJECT(15)
+aa: Address type:
+RANDOM(0), ICAO(1), FLARM(2), OGN(3)
+
+Das heißt:
+06
+ist binär:
+STtt ttaa
+0000 0110
+S: 0 -> Kein Stealth (sollte fast immer 0 sein)
+T: 0 -> Kein no tracking  (sollte immer 0 sein)
+tttt: 0001 -> Glider
+aa: 10 entspricht 2 dezimal: FLARM
